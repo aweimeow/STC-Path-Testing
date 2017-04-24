@@ -24,3 +24,17 @@ class TestTriangleCoverageClass:
         Because of Triangle Problem doesn't have a Loop
         so we don't have C2 Coverage Test
         """
+
+    def test_triangle_mcdc(self):
+        # MCDC: a == b && b == c, FF, FT, TF, TT
+        assert triangle(2, 3, 4).type == "SCALENE"
+        assert triangle(4, 5, 5).type == "ISOCELES"
+        assert triangle(5, 5, 4).type == "ISOCELES"
+        assert triangle(6, 6, 6).type == "EQUALATERAL"
+
+        # MCDC: a != b && b == c, FF, FT, TF, TT
+        # BTW, in here a, b, c will sorted
+        assert triangle(5, 5, 6).type == "ISOCELES"
+        assert triangle(5, 5, 5).type == "EQUALATERAL"
+        assert triangle(3, 5, 6).type == "SCALENE"
+        assert triangle(5, 6, 6).type == "ISOCELES"
