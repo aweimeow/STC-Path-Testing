@@ -4,7 +4,7 @@ from STC_Path_Testing.nextdate import Date
 class TestNextDateCoverageClass:
     """
     Valid Value Range:
-    1812 <= year <= 2012
+    1812 <= year <= 2016
     1 <= month <= 12
     1 <= day <= 31
     """
@@ -21,7 +21,7 @@ class TestNextDateCoverageClass:
         assert Date(2015, 1, 31).nextdate == "2015, 2, 1"
         assert Date(2015, 4, 30).nextdate == "2015, 5, 1"
         assert Date(2015, 2, 28).nextdate == "2015, 3, 1"
-        assert Date(2012, 2, 29).nextdate == "2013, 3, 1"
+        assert Date(2012, 2, 29).nextdate == "2012, 3, 1"
         assert Date(2015, 5, 1).nextdate == "2015, 5, 2"
 
     def test_nextdate_c2(self):
