@@ -16,7 +16,9 @@ class TestNextDateCoverageClass:
         assert Date(2016, 3, 1).nextdate == "2016, 3, 2"
 
     def test_nextdate_c1(self):
-        assert Date(2020, 13, 13).nextdate == "INVALID"
+        assert Date(2020, 1, 1).nextdate == "INVALID"
+        assert Date(2012, 0, 1).nextdate == "INVALID"
+        assert Date(2012, 1, 0).nextdate == "INVALID"
         assert Date(2015, 12, 31).nextdate == "2016, 1, 1"
         assert Date(2015, 1, 31).nextdate == "2015, 2, 1"
         assert Date(2015, 4, 30).nextdate == "2015, 5, 1"
